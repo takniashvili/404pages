@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie 404</title>
+  <style>
+    /* Global Styles */
+    @import url('https://fonts.googleapis.com/css2?family=Mina&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Mina', sans-serif;
+      background-color: #050505;
+      height: "100vh";
+      width: "100vw";
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    /* Cube Animation */
+    @keyframes animate {
+      0% {
+        transform: rotateX(-30deg) rotateY(0deg);
+      }
+
+      100% {
+        transform: rotateX(-30deg) rotateY(360deg);
+      }
+    }
+
+    /* Cube Base Style */
+    .cube {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      transform-style: preserve-3d;
+      animation: animate 4s linear infinite;
+    }
+
+    .cube div,
+    .cube-part {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+    }
+
+    /* Specific Cube Part Styles */
+    .cube-part {
+      background: linear-gradient(#000000, #ffffff);
+      transform: rotateY(calc(90deg * var(--i))) translateZ(50px);
+    }
+
+    /* shadows */
+    .top {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100px;
+      height: 100px;
+      background-color: rgb(255, 253, 253);
+      color: red;
+      transform: rotateX(90deg) translateZ(-120px);
+      filter: blur(10px);
+    }
+
+    .cube-part {
+      filter: contrast(120%) brightness(110%);
+    }
+
+    .text {
+      margin-top: 20vh;
+      margin-bottom: 12px;
+      text-align: center;
+      color: #FFFFFF;
+    }
+
+    .text2 {
+      text-align: center;
+      color: #FFFFFF;
+    }
+
+    .text-width {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .width {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 15vh;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="another-parent">
+    <div class="parent">
+      <div class="text-width">
+        <div class="text"> 404 </div>
+        <div class="text2"> პოსტერი ვერ მოიძებნა</div>
+      </div>
+      <div class="width">
+        <div class="cube">
+          <div class="top"></div>
+          <div>
+            <span style="--i:0;" class="cube-part"></span>
+            <span style="--i:1;" class="cube-part"></span>
+            <span style="--i:2;" class="cube-part"></span>
+            <span style="--i:3;" class="cube-part"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
